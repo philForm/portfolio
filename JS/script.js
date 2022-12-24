@@ -4,7 +4,6 @@ const navLink = document.getElementsByClassName("nav");
 console.log(navLink[0]);
 
 toggle.addEventListener("click", () => {
-
     nav.classList.toggle("bloc");
 });
 

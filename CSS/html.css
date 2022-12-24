@@ -13,6 +13,7 @@
 html {
     /* Pour que 1rem soit équivalent à 10px sur toute la page */
     font-size: 62.5%;
+    font-family: "Raleway", sans-serif;
 }
 
 body {
@@ -34,23 +35,3 @@ body {
 .container {
     padding: 0;
 }
-
-a {
-    color: black;
-}
-
-/* ------------------ */
-/* Classes injectées */
-/* ------------------ */
-.blue {
-    color: var(--blue);
-}
-
-.grey {
-    color: var(--medium_grey);
-}
-
-.bold {
-    font-weight: bold;
-}
-/* ------------------ */

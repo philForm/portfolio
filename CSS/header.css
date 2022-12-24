@@ -45,26 +45,27 @@
 .header__toggle {
     display: none;
     position: absolute;
-    height: 50px;
     cursor: pointer;
     top: 0px;
     font-size: 3rem;
-    padding: 10px 10px 0 0;
+    padding-right: 10px;
+    color: var(--nav);
+    top: 50%;
+    transform: translateY(-55%);
+    transition: color 300ms ease-in-out;
 }
 
-/* .header__nav nav {
-    display: block;
-} */
+.header__toggle:hover {
+    color: var(--nav_hover);
+}
 
 .nav {
     position: relative;
+    transition: color 300ms ease-in-out;
 }
 
 /* ======================================= */
 
-.nav {
-    transition: color 300ms ease-in-out;
-}
 .nav::after {
     content: "";
     position: absolute;
@@ -86,12 +87,15 @@ a.nav:hover {
     color: #8bc34a;
 }
 
+/* =================================== */
+/* Class injectées en javascript */
 .bloc {
     display: block !important;
 }
 .none {
     display: none;
 }
+/* =================================== */
 
 /* @media all and (max-width: 768px) { */
 @media all and (max-width: 500px) {
@@ -103,9 +107,9 @@ a.nav:hover {
     }
     .header__nav ul {
         flex-direction: column;
-        justify-content: end;
-        align-items: end;
-        gap: 2rem;
+        /* justify-content: end; */
+        /* align-items: end; */
+        gap: 0;
         position: relative;
         top: 70px;
         background-color: cadetblue;
@@ -118,6 +122,7 @@ a.nav:hover {
     }
 
     .header__nav li {
+        text-align: end;
         width: 100%;
     }
 
