@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600;700;800;900&display=swap");
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+html {
+    /* Pour que 1rem soit équivalent à 10px sur toute la page */
+    font-size: 62.5%;
+}
+
+body {
+    background-color: darkgray;
+}
+/* ------------------- */
+/* Liste des variables */
+/* ------------------- */
+:root {
+    --nav: #ffc107;
+    --nav_hover: #8bc34a;
+    --medium_grey: #e3e3e3;
+    --light_blue: #deebff;
+    --shadow: 0px 0px 6px rgba(158, 158, 158, 0.8);
+    --form_height: 5rem;
+}
+/* ------------------- */
+
+.container {
+    padding: 0;
+}
+
+a {
+    color: black;
+}
+
+/* ------------------ */
+/* Classes injectées */
+/* ------------------ */
+.blue {
+    color: var(--blue);
+}
+
+.grey {
+    color: var(--medium_grey);
+}
+
+.bold {
+    font-weight: bold;
+}
+/* ------------------ */

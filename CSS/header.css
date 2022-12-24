@@ -1,0 +1,129 @@
+/* Barre de navigation */
+
+.header {
+    position: relative;
+    background-color: cadetblue;
+    margin-bottom: 30px;
+    height: 70px;
+}
+
+/* avatar */
+.header__logo {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    overflow: hidden;
+}
+
+.header__logo img {
+    object-fit: cover;
+    border-radius: 50%;
+    width: 50%;
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+
+.header__nav,
+.header__nav ul {
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+
+.header__nav {
+    font-size: 1.6rem;
+    font-weight: 600;
+    min-height: 78px;
+}
+
+.header__nav a.nav {
+    display: inline-block;
+    padding: 40px 25px 12px 25px;
+    color: var(--nav);
+}
+
+.header__toggle {
+    display: none;
+    position: absolute;
+    height: 50px;
+    cursor: pointer;
+    top: 0px;
+    font-size: 3rem;
+    padding: 10px 10px 0 0;
+}
+
+/* .header__nav nav {
+    display: block;
+} */
+
+.nav {
+    position: relative;
+}
+
+/* ======================================= */
+
+.nav {
+    transition: color 300ms ease-in-out;
+}
+.nav::after {
+    content: "";
+    position: absolute;
+    border-top: 3px solid transparent;
+    bottom: 0;
+    left: 50%;
+    right: 100%;
+    transition: all 300ms ease-in-out;
+}
+
+a.nav:hover::after {
+    border-top: 3px solid var(--nav);
+    right: 0;
+    left: 0;
+    color: var(--nav);
+}
+a.nav:hover {
+    /* color: var(--nav); */
+    color: #8bc34a;
+}
+
+.bloc {
+    display: block !important;
+}
+.none {
+    display: none;
+}
+
+/* @media all and (max-width: 768px) { */
+@media all and (max-width: 500px) {
+    .header__toggle {
+        display: block;
+    }
+    .header__nav nav {
+        display: none;
+    }
+    .header__nav ul {
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+        gap: 2rem;
+        position: relative;
+        top: 70px;
+        background-color: cadetblue;
+        /* padding: 10px; */
+    }
+    .header__nav {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+    }
+
+    .header__nav li {
+        width: 100%;
+    }
+
+    .header__nav a.nav {
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+    }
+}
