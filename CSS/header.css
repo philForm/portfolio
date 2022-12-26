@@ -3,13 +3,14 @@
 .header {
     position: relative;
     background-color: cadetblue;
-    margin-bottom: 30px;
     height: 70px;
 }
 
 /* avatar */
 .header__logo {
     position: absolute;
+    width: 100px;
+    height: 100px;
     left: 10px;
     top: 15px;
     overflow: hidden;
@@ -19,9 +20,9 @@
 .header__logo img {
     object-fit: cover;
     border-radius: 50%;
-    width: 50%;
+    width: 100%;
     height: 100%;
-    aspect-ratio: 1/1;
+    /* aspect-ratio: 1/1; */
 }
 
 .header__nav,
@@ -32,13 +33,13 @@
 }
 
 .header__nav ul {
-    transition: all 300ms ease-in-out;
+    /* transition: transform 1000ms ease-in-out; */
 }
 
 .header__nav {
     font-size: 1.6rem;
     font-weight: 600;
-    min-height: 78px;
+    /* min-height: 70px; */
 }
 
 .header__nav a.nav {
@@ -131,11 +132,9 @@ a.nav:hover {
         align-items: end;
         gap: 0;
         position: relative;
-        /* top: 70px; */
         top: -200px;
         background-color: cadetblue;
-        transition: all 1000ms ease-in-out;
-        /* transform: translateY(-118px); */
+        transition: transform 1000ms ease-in-out;
         transform: translateY(268px);
         width: 100vw;
         z-index: -20;
