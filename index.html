@@ -6,29 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="./CSS/normalize.css">
+    <!-- <link rel="stylesheet" href="./CSS/normalize.css"> -->
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
 
 <body>
     <div class="container">
-        <header class="header">
-            <div class="header__logo">
-                <img src="./images/avatar/gastonlagaffe.jpg" alt="avatar">
-            </div>
-            <div class="header__nav">
-                <nav id="nav">
-                    <ul class="transition">
-                        <li><a href="#" class="nav">A propos</a></li>
-                        <li><a href="#" class="nav">Activités</a></li>
-                        <li><a href="#" class="nav">Activités</a></li>
-                    </ul>
-                </nav>
-                <a type="button" class="header__toggle" id="header-toggle">
-                    &#9776;
-                </a>
-            </div>
-        </header>
+        <div class="fixed">
+            <header class="header">
+                <div class="header__logo">
+                    <img src="./images/avatar/gastonlagaffe.jpg" alt="avatar">
+                </div>
+                <div class="header__nav">
+                    <nav id="nav">
+                        <ul class="transition">
+                            <li><a href="#apropos" class="nav">A propos</a></li>
+                            <li><a href="#portfolio" class="nav">Portfolio</a></li>
+                            <li><a href="#contact" class="nav">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <a type="button" class="header__toggle" id="header-toggle">
+                        &#9776;
+                    </a>
+                </div>
+            </header>
+        </div>
+        <div class="section__container">
+
+            <section class="section apropos" id="apropos">
+
+            </section>
+            <section class="section portfolio" id="portfolio">
+
+            </section>
+            <section class="section contact" id="contact">
+
+            </section>
+        </div>
     </div>
     <script src="./JS/script.js"></script>
 </body>
