@@ -1,3 +1,6 @@
-@import url(./html.css);
-@import url(./header.css);
-@import url(./sections.css);
+@import url("./html.css");
+@import url("./header.css");
+@import url("./sections.css");
+@import url("./sect_about.css");
+@import url("./sect_portfolio.css");
+@import url("./sect_contact.css");

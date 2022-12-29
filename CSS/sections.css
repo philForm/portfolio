@@ -4,7 +4,7 @@
     width: 100%;
     height: calc(100vh - 70px);
     top: 70px;
-    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-points-y: repeat(100vh - 70px);
     /* z-index: -20; */
     scroll-snap-type: y mandatory;
     scrollbar-width: none;
@@ -17,17 +17,7 @@
 .section__container > * {
     width: 100vw;
     position: relative;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 69px);
     scroll-snap-align: start;
     z-index: -30;
-}
-
-.apropos {
-    background-color: blueviolet;
-}
-.portfolio {
-    background-color: dodgerblue;
-}
-.contact {
-    background-color: brown;
 }
