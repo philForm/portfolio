@@ -16,8 +16,12 @@
 
 .section__container > * {
     width: 100vw;
-    position: relative;
+    /* position: relative; */
     height: calc(100vh - 69px);
     scroll-snap-align: start;
     z-index: -30;
+}
+
+.swiper-pagination {
+    position: relative;
 }

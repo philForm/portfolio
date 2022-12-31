@@ -27,6 +27,7 @@ body {
 /* Liste des variables */
 /* ------------------- */
 :root {
+    --header: #b46f28;
     --nav: #ffc107;
     --nav_hover: #8bc34a;
     --medium_grey: #e3e3e3;

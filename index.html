@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./CSS/normalize.css">
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
@@ -29,34 +30,68 @@
                         &#9776;
                     </a>
                 </div>
+                <div class="cache"></div>
             </header>
         </div>
         <div class="section__container">
             <section class="section about" id="about">
-                <div class="about__contain">
-                    <div class="about__title">
-                        <h1>Mon Nom</h1>
-                        <h2>Développeur WEB</h2>
-                    </div>
-                    <div class="about__presentation">
-                        <div class="about__text">
-                            <p>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse, aut excepturi,
-                                numquam, et non repellat quos maiores porro provident eveniet facilis sapiente
-                                dicta
-                                ea.
-                                Mollitia corrupti tempora consectetur numquam dolore.
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="about__contain">
+                                <div class="about__title">
+                                    <h1>Mon Nom</h1>
+                                    <h2>Développeur WEB</h2>
+                                </div>
+                                <div class="about__presentation">
+                                    <div class="about__text">
+                                        <p>
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse, aut
+                                            excepturi,
+                                            numquam, et non repellat quos maiores porro provident eveniet facilis
+                                            sapiente
+                                            dicta
+                                            ea.
+                                            Mollitia corrupti tempora consectetur numquam dolore.
 
-                            </p>
+                                        </p>
+                                    </div>
+                                    <div class="about__img">
+                                        <img src="./images/avatar/gastonlagaffe.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination" id="about-pagination1">
+                                </div>
+                            </div>
                         </div>
-                        <div class="about__img">
-                            <img src="./images/avatar/gastonlagaffe.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="about__more">
-                        <button>Plus d'informations</button>
-                    </div>
+                        <div class="swiper-slide">
+                            <div class="about__contain">
+                                <div class="about__title">
+                                    <h1>Partie Deux</h1>
+                                    <h2>Développeur WEB</h2>
+                                </div>
+                                <div class="about__presentation">
+                                    <div class="about__text">
+                                        <p>
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse, aut
+                                            excepturi,
+                                            numquam, et non repellat quos maiores porro provident eveniet facilis
+                                            sapiente
+                                            dicta
+                                            ea.
+                                            Mollitia corrupti tempora consectetur numquam dolore.
 
+                                        </p>
+                                    </div>
+                                    <div class="about__img">
+                                        <img src="./images/avatar/gastonlagaffe.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination" id="about-pagination2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <section class="section portfolio" id="portfolio">
@@ -67,6 +102,8 @@
             </section>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="./JS/swiper.js"></script>
     <script src="./JS/script.js"></script>
 </body>
 

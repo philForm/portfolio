@@ -3,7 +3,7 @@ const nav = document.getElementById("nav");
 const navLink = document.getElementsByClassName("nav");
 const navUl = document.querySelector("#nav > ul");
 console.log(navUl);
-console.log(window.innerWidth)
+console.log(window.innerWidth);
 
 window.addEventListener("resize", () => {
     if (window.matchMedia("(min-width: 500px)").matches && !navUl.classList.contains("transition")) {
