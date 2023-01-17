@@ -27,7 +27,7 @@
 }
 
 .section {
-    background-color: #fdecc3;
+    background-color: var(--back_color);
 }
 
 .section__title {

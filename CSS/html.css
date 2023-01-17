@@ -33,6 +33,7 @@ body {
 /* Liste des variables */
 /* ------------------- */
 :root {
+    --back_color: #fdecc3;
     --header: #b46f28;
     --nav: #ffc107;
     --nav_hover: #8bc34a;
@@ -40,6 +41,17 @@ body {
     --light_blue: #deebff;
     --shadow: 0px 0px 6px rgba(158, 158, 158, 0.8);
     --form_height: 5rem;
+
+    --linear_grad-1: linear-gradient(
+        343deg,
+        rgba(188, 158, 209, 1) 0%,
+        rgba(94, 167, 193, 1) 36%,
+        rgba(252, 176, 69, 1) 83%
+    );
+
+    --btn_hover: rgb(0 0 0 / 13%) 1px 6px 17px 3px, rgb(0 0 0 / 22%) 0px 10px 10px;
+
+    --text_color: #434343;
 }
 /* ------------------- */
 
@@ -48,7 +60,15 @@ body {
     padding: 0;
 }
 
+h2,
+h3,
+h4,
+span {
+    color: var(--text_color);
+}
+
 p {
+    color: var(--text_color);
     font-size: 1.2rem;
     line-height: 1.6rem;
 }

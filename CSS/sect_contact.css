@@ -42,7 +42,6 @@
 
 .form > input:focus,
 .form > textarea:focus {
-    /* border: 2px solid #5efb75; */
     border: 2px solid #6442cf;
 }
 

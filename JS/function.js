@@ -99,13 +99,13 @@ const portfolioList = (listArray) => {
                         <img src=${item.image} alt="${item.alt}">
                     </a>
                     <div class="portfolio__content">
-                        <div class="portfolio__more" id='portfolio-more-${listArray.indexOf(item) + 1}'>
-                            ${bouton}
-                        </div>
                         <div class="portfolio__descript">
                             ${item.description}
                         </div>
-                            ${logoContain}
+                        ${logoContain}
+                    </div>
+                    <div class="portfolio__more" id='portfolio-more-${listArray.indexOf(item) + 1}'>
+                        ${bouton}
                     </div>
                 </article>
                 `;
