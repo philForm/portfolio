@@ -1,20 +1,56 @@
 .about {
     display: flex;
     align-items: center;
-    background-color: rgb(231, 201, 191);
+    /* background-color: rgb(231, 201, 191); */
+    background-color: #fdecc3;
+}
+
+.about__swiper {
+    max-width: 100%;
+    /* max-height: 100%; */
+    height: 100%;
+}
+
+.about__slide {
+    /* background-color: cadetblue; */
+    /* height: calc(100% - 20px); */
+    height: 100%;
 }
 
 .about__contain {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    /* justify-content: center; */
     align-items: center;
+    position: relative;
+    overflow: auto;
     margin: auto;
     width: 80%;
+    max-height: 100%;
     min-height: 80%;
-    /* background-color: beige; */
+    /* background-color: coral; */
     padding: 20px;
     align-items: center;
     gap: 2rem;
+}
+
+.about__contain > div:first-child {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about__contain .text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.about__title.curriculum {
+    display: flex;
+    justify-content: space-between;
 }
 
 .about__presentation {
@@ -34,8 +70,72 @@
     text-align: justify;
 }
 
+.about__text p {
+    margin-bottom: 0.6rem;
+}
+
+.about__img {
+    display: flex;
+}
+
 .about__img img {
     object-fit: cover;
-    width: 200px;
+    max-width: 200px;
+    border-radius: 50%;
     aspect-ratio: 1;
+}
+
+.about__pagination {
+    width: max-content !important;
+}
+
+@media all and (max-width: 500px) {
+    .about__contain > div:first-child:not(.text) {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .about__img {
+        width: 50%;
+        min-width: 150px;
+    }
+
+    .about__img img {
+        max-width: 100%;
+    }
+}
+
+@media all and (min-width: 500px) and (max-width: 768px) {
+    .about__presentation {
+        flex-direction: column-reverse;
+    }
+
+    .about__img {
+        width: 30%;
+    }
+
+    .about__img img {
+        /* width: 50%; */
+        max-width: 100%;
+    }
+
+    .about__contain {
+        /* justify-content: flex-start; */
+        overflow: auto;
+        width: 100%;
+    }
+
+    .about__contain > div:first-child:not(.text) {
+        justify-content: center;
+        flex-direction: row-reverse;
+        /* flex-direction: column-reverse; */
+        /* align-items: flex-start; */
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+@media all and (min-width: 992px) {
+    .about__contain {
+        width: 800px;
+    }
 }

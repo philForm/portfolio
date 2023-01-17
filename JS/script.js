@@ -1,42 +1,38 @@
-const toggle = document.getElementById("header-toggle");
-const nav = document.getElementById("nav");
-const navLink = document.getElementsByClassName("nav");
-const navUl = document.querySelector("#nav > ul");
-console.log(navUl);
+import { projects } from "./array.js";
+import { addClassOnEvent, addClassOnResize, adjustHeight, classToggle, portfolioList } from "./function.js";
+import { toggle, navLink, navUl, aboutContainElt1, aboutContainElt2 } from "./html_element.js";
+
 console.log(window.innerWidth);
 
+// Repli du menu déroulant au delà de 768px de largeur d'écran, en ajoutant la class "transition" à navUl :
 window.addEventListener("resize", () => {
-    if (window.matchMedia("(min-width: 500px)").matches && !navUl.classList.contains("transition")) {
-        navUl.classList.add("transition");
-        console.log("supérieur à 500px");
-        navUl.style.zIndex = -20;
-    }
+    addClassOnResize('768px', navUl, "transition");
 });
 
+// Au clic sur le bouton hamb du menu, repli ou deployement du menu déroulant :
 toggle.addEventListener("click", () => {
-
-    if (!navUl.classList.contains("transition")) {
-        navUl.classList.add("transition");
-        navUl.style.zIndex = -20;
-
-    } else {
-        navUl.classList.remove("transition");
-        setTimeout(() => {
-            navUl.style.zIndex = 0;
-        }, 1000)
-    }
+    classToggle(navUl, "transition");
 });
 
-for (let i = 0; i < navLink.length; i++) {
-    navLink[i].addEventListener("click", () => {
-        navUl.style.zIndex = -20;
-        navUl.classList.add("transition");
+// Repli du menu déroulant au click sur un intitulé du menu :
+addClassOnEvent(navLink, navUl, 'click', "transition");
 
-    });
-};
+// Création du portfololio :
+portfolioList(projects);
 
-// ===================================================
+// Ajuste la hauteur de deux éléments HTML au chargement de la page :
+window.addEventListener("load", () => {
+    adjustHeight(aboutContainElt1, aboutContainElt2);
+});
 
-const header = document.querySelector(".header");
-const headerHeight = header.offsetHeight;
+// Ajuste la hauteur de deux éléments HTML au redimensionnement en largeur de la page :
+window.addEventListener("resize", () => {
+    adjustHeight(aboutContainElt1, aboutContainElt2);
+});
+
+
+
+
+
+
 

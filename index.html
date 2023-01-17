@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <script src="https://kit.fontawesome.com/2ad4e04f6f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./CSS/normalize.css">
     <link rel="stylesheet" href="./CSS/style.css">
@@ -15,13 +16,18 @@
     <div class="container">
         <div class="fixed">
             <header class="header">
-                <div class="header__logo">
-                    <img src="./images/avatar/gastonlagaffe.jpg" alt="avatar">
+                <div class="header__title">
+                    <div class="header__logo">
+                        <img src="./images/avatar/einstein.jpg" alt="avatar">
+                    </div>
+                    <div class="title" id="title">
+                        <h1>Mon Portfolio</h1>
+                    </div>
                 </div>
                 <div class="header__nav">
                     <nav id="nav">
                         <ul class="transition">
-                            <li><a href="#about" class="nav">A propos</a></li>
+                            <li><a href="#about" class="nav" title="a propos">A propos</a></li>
                             <li><a href="#portfolio" class="nav">Portfolio</a></li>
                             <li><a href="#contact" class="nav">Contact</a></li>
                         </ul>
@@ -30,81 +36,138 @@
                         &#9776;
                     </a>
                 </div>
-                <div class="cache"></div>
             </header>
         </div>
-        <div class="section__container">
+        <div class="section__container" id="sect-container">
             <section class="section about" id="about">
-                <div class="swiper mySwiper">
+                <div class="section__title">
+                    <h2>Présentation</h2>
+                </div>
+                <div class="swiper mySwiper about__swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="about__contain">
-                                <div class="about__title">
-                                    <h1>Mon Nom</h1>
-                                    <h2>Développeur WEB</h2>
-                                </div>
-                                <div class="about__presentation">
-                                    <div class="about__text">
-                                        <p>
-                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse, aut
-                                            excepturi,
-                                            numquam, et non repellat quos maiores porro provident eveniet facilis
-                                            sapiente
-                                            dicta
-                                            ea.
-                                            Mollitia corrupti tempora consectetur numquam dolore.
-
-                                        </p>
+                        <div class="swiper-slide about__slide">
+                            <div class="about__contain" id="about-contain-1">
+                                <div>
+                                    <div class="text">
+                                        <div class="about__title">
+                                            <h3>Philippe Mathieu</h3>
+                                            <h4>Développeur WEB</h4>
+                                        </div>
+                                        <div class="about__presentation">
+                                            <div class="about__text">
+                                                <p>
+                                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                                </p>
+                                                <p>
+                                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="about__img">
-                                        <img src="./images/avatar/gastonlagaffe.jpg" alt="">
+                                        <img src="./images/avatar/einstein.jpg" alt="">
                                     </div>
                                 </div>
-                                <div class="swiper-pagination" id="about-pagination1">
+                                <div class="swiper-pagination about__pagination" id="about-pagination1">
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="about__contain">
-                                <div class="about__title">
-                                    <h1>Partie Deux</h1>
-                                    <h2>Développeur WEB</h2>
-                                </div>
-                                <div class="about__presentation">
-                                    <div class="about__text">
-                                        <p>
-                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse, aut
-                                            excepturi,
-                                            numquam, et non repellat quos maiores porro provident eveniet facilis
-                                            sapiente
-                                            dicta
-                                            ea.
-                                            Mollitia corrupti tempora consectetur numquam dolore.
-
-                                        </p>
+                            <div class="about__contain" id="about-contain-2">
+                                <div class="text">
+                                    <div class="about__title curriculum">
+                                        <h3>Mon profil</h3>
+                                        <a href="./documents/CV_Dev_2.pdf" target="_blank" class="btn">Voir mon CV</a>
                                     </div>
-                                    <div class="about__img">
-                                        <img src="./images/avatar/gastonlagaffe.jpg" alt="">
+                                    <div class="about__presentation">
+                                        <div class="about__text">
+                                            <p>
+                                                Autonome et rigoureux, mes 27 années
+                                                d’expériences professionnelles dans le domaine
+                                                artistique m’ont permis de renforcer mes
+                                                acquis et d’appréhender les différents outils et
+                                                techniques de dessin.
+                                            </p>
+                                            <p>
+                                                Passionné d’informatique, j’ai découvert par
+                                                hasard l’automatisation de tâches, ce qui m’a
+                                                amené à commencer à me former aux
+                                                différents langages (HTLM, CSS, JavaScript, PHP,
+                                                Python, SQL …).
+                                            </p>
+                                            <p>
+                                                En quête de nouveaux challenges, ayant le goût
+                                                d’apprendre et une forte aptitude à acquérir de
+                                                nouvelles connaissances, je viens de suivre une
+                                                formation intense de Développeur Web pour
+                                                proposer mes services de création de sites web
+                                                en freelance. Sachant travailler à la fois de
+                                                manière autonome ou en équipe, ayant un
+                                                esprit d’analyse et étant créatif, je m’épanouis
+                                                dans des environnements dynamiques grâce à
+                                                ma capacité à comprendre et à résoudre des
+                                                problèmes complexes pour atteindre des
+                                                objectifs fixés.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="swiper-pagination" id="about-pagination2">
+                                <div class="swiper-pagination about__pagination" id="about-pagination2">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+            <!-- Section portfolio -->
             <section class="section portfolio" id="portfolio">
+                <div class="section__title">
+                    <h2>Portfolio</h2>
+                </div>
+                <div class="swiper mySwiper2 portfolio__swiper">
+                    <div class="swiper-wrapper portfolio__wrapper" id="portfolio-wrapper">
 
+                        <!-- Code injecté en js -->
+
+                    </div>
+                    <div class="swiper-pagination portfolio__pagination" id="pagination-portfolio"></div>
+                    <div class="next-prev">
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
             </section>
+            <!-- Section contact -->
             <section class="section contact" id="contact">
+                <div class="section__title">
+                    <h2>Pour me contacter</h2>
+                </div>
+                <div class="contact__form">
+                    <form action="">
+                        <div class="form">
+                            <label for="form-name">Nom</label>
+                            <input type="text" name="form-name" id="form-name" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form">
+                            <label for="form-email">Email</label>
+                            <input type="email" name="form-email" id="form-email" placeholder="Votre Email" required>
+                        </div>
+                        <div class="form">
+                            <label for="form-message">Message</label>
+                            <textarea name="form-message" id="form-message" cols="30" rows="10"
+                                placeholder="Votre message ..."></textarea>
+                        </div>
+                        <button type="submit" class="btn">Envoyer</button>
+                    </form>
+                </div>
 
             </section>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script src="./JS/swiper.js"></script>
-    <script src="./JS/script.js"></script>
+    <!-- <script type="module" src="./JS/swiper_function_init.js"></script> -->
+    <script type="module" src="./JS/swiper.js"></script>
+    <script type="module" src="./JS/script.js"></script>
 </body>
 
 </html>

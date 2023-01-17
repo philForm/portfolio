@@ -15,13 +15,31 @@
 }
 
 .section__container > * {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
     width: 100vw;
-    /* position: relative; */
-    height: calc(100vh - 69px);
+    position: relative;
+    height: calc(100vh - 70px);
     scroll-snap-align: start;
-    z-index: -30;
+    /* z-index: -30; */
+    top: 70px;
+}
+
+.section {
+    background-color: #fdecc3;
+}
+
+.section__title {
+    margin: 12px auto;
 }
 
 .swiper-pagination {
     position: relative;
+}
+
+@media all and (max-width: 768px) {
+    .section__container > * {
+        overflow: auto;
+    }
 }
