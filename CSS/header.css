@@ -37,6 +37,11 @@
     font-size: 3rem;
     font-style: italic;
     margin: 0;
+    transition: color 300ms ease-in-out;
+}
+
+.header .title h1:hover {
+    color: var(--nav_hover);
 }
 
 .header__nav,
@@ -105,7 +110,7 @@ a.nav:hover::after {
     color: var(--nav);
 }
 a.nav:hover {
-    color: #8bc34a;
+    color: var(--nav_hover);
 }
 
 .header__nav::after {
@@ -121,7 +126,7 @@ a.nav:hover {
 .title {
     position: absolute;
     left: 16%;
-    color: #ffc107;
+    color: var(--nav);
     font-size: 2rem;
     z-index: 1;
     top: 50%;
@@ -183,8 +188,8 @@ a.nav:hover {
         gap: 0;
         position: relative;
         top: 0;
-        background-color: var(--header);
-        transition: transform 1000ms ease-in-out;
+        background-color: var(--header_trans);
+        transition: transform 300ms ease-in-out;
         transform: translateY(115px);
         width: 100vw;
         z-index: -20;

@@ -21,7 +21,7 @@ html {
 }
 
 body {
-    background-color: darkgray;
+    background-color: var(--back_color);
 }
 
 ::-webkit-scrollbar {
@@ -34,9 +34,10 @@ body {
 /* ------------------- */
 :root {
     --back_color: #fdecc3;
-    --header: #b46f28;
+    --header: #69a8ca;
+    --header_trans: #69a8cabd;
     --nav: #ffc107;
-    --nav_hover: #8bc34a;
+    --nav_hover: #fff4d3;
     --medium_grey: #e3e3e3;
     --light_blue: #deebff;
     --shadow: 0px 0px 6px rgba(158, 158, 158, 0.8);

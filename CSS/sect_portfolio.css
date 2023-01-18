@@ -100,7 +100,7 @@
 .portfolio__more a {
     margin: 5px !important;
 }
-
+/* 
 .btn {
     display: inline-block;
     width: auto;
@@ -130,11 +130,12 @@
 .btn:hover {
     box-shadow: var(--btn_hover);
     scale: 1.1;
+    color: var(--nav_hover);
 }
 
 .btn:hover::after {
     opacity: 0.1;
-}
+} */
 
 .portfolio__techno-list {
     display: flex;

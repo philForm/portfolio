@@ -9,22 +9,10 @@ const swiper = () => {
             },
         },
     });
-}
+};
 
-console.log(swiper())
+console.log(swiper());
 
-
-const btnPagin1 = document.getElementById("about-pagination1");
-const btnPagin2 = document.getElementById("about-pagination2");
-
-btnPagin1.firstChild.style.display = "none";
-btnPagin2.lastChild.style.display = "none";
-
-btnPagin1.lastChild.innerText = "Plus d'informations";
-btnPagin2.firstChild.innerText = "Retour";
-
-// btnPagin1.classList.add('btn');
-// btnPagin2.classList.add('btn');
 
 const swiper2 = () => {
 
@@ -68,5 +56,28 @@ const swiper2 = () => {
 }
 
 console.log(swiper2());
+
+window.onload = () => {
+
+    const btnPagin1 = document.getElementById("about-pagination1");
+    const btnPagin2 = document.getElementById("about-pagination2");
+
+    btnPagin1.firstChild.style.display = "none";
+    btnPagin2.lastChild.style.display = "none";
+
+    btnPagin1.lastChild.innerText = "Plus d'informations";
+    btnPagin2.firstChild.innerText = "Retour";
+
+    btnPagin1.lastChild.classList.add('btn');
+    btnPagin2.firstChild.classList.add('btn');
+
+    let bulletList = document.getElementById("pagination-portfolio").children;
+
+    for (let i = 0; i < bulletList.length; i++) {
+        bulletList[i].classList.add("btn");
+    };
+
+};
+
 
 
