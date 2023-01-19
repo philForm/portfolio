@@ -146,18 +146,20 @@
                     <form action="">
                         <div class="form">
                             <label for="form-name">Nom</label>
-                            <input type="text" name="form-name" id="form-name" placeholder="Votre nom" required>
+                            <input type="text" name="form-name" id="form-name" placeholder="Votre nom" id="form-name"
+                                required>
                         </div>
                         <div class="form">
                             <label for="form-email">Email</label>
-                            <input type="email" name="form-email" id="form-email" placeholder="Votre Email" required>
+                            <input type="email" name="form-email" id="form-email" placeholder="Votre Email"
+                                id="form-email" required>
                         </div>
                         <div class="form">
                             <label for="form-message">Message</label>
                             <textarea name="form-message" id="form-message" cols="30" rows="10"
                                 placeholder="Votre message ..."></textarea>
                         </div>
-                        <button type="submit" class="btn">Envoyer</button>
+                        <button type="submit" class="btn" id="form-btn">Envoyer</button>
                     </form>
                 </div>
 
@@ -166,6 +168,13 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <!-- <script type="module" src="./JS/swiper_function_init.js"></script> -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("EMsl8bZgRKZeWsj-_");
+        })();
+    </script>
     <script type="module" src="./JS/swiper.js"></script>
     <script type="module" src="./JS/script.js"></script>
 </body>

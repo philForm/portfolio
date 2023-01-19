@@ -1,6 +1,6 @@
 import { projects } from "./array.js";
-import { addClassOnEvent, addClassOnResize, adjustHeight, classToggle, portfolioList } from "./function.js";
-import { toggle, navLink, navUl, aboutContainElt1, aboutContainElt2 } from "./html_element.js";
+import { addClassOnEvent, addClassOnResize, adjustHeight, classToggle, portfolioList, sendMail } from "./function.js";
+import { toggle, navLink, navUl, aboutContainElt1, aboutContainElt2, formName, formEmail, formMessage, btnSubmit } from "./html_element.js";
 
 console.log(window.innerWidth);
 
@@ -30,10 +30,15 @@ window.addEventListener("resize", () => {
     adjustHeight(aboutContainElt1, aboutContainElt2);
 });
 
+// Paramètres de EmailJS :
+const service = 'service_uamh0ws';
+const template = 'template_hyh5rsk';
 
-
-
-
+// Envoi du message du formulaire :
+btnSubmit.addEventListener("click", (e) => {
+    e.preventDefault();
+    sendMail(formName, formEmail, formMessage, service, template);
+})
 
 
 

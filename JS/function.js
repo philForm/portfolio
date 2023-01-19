@@ -162,4 +162,34 @@ const adjustHeight = (elt1, elt2) => {
 
 };
 
-export { addClassOnResize, addClassOnEvent, classToggle, portfolioList, swiper2, adjustHeight };
+// EMAIL JS
+/**
+ * Envoi les données du formulaire via EmailJS :
+ * @param {HTMLInputElement} formName 
+ * @param {HTMLInputElement} formEmail 
+ * @param {HTMLInputElement} formMessage 
+ */
+const sendMail = (formName, formEmail, formMessage, service, template) => {
+
+    let templateParams = {
+        name: formName.value,
+        email: formEmail.value,
+        message: formMessage.value
+    };
+
+    // let service = 'service_uamh0ws';
+    // let template = 'template_hyh5rsk';
+
+    emailjs.send(service, template, templateParams)
+        .then((res) => {
+            formName.value = "";
+            formEmail.value = "";
+            formMessage.value = "";
+            alert('Votre message a été envoyé avec succés !', res.status, res.text);
+        }).catch((err) => {
+            alert(err);
+        });
+};
+
+
+export { addClassOnResize, addClassOnEvent, classToggle, portfolioList, swiper2, adjustHeight, sendMail };
