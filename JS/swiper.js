@@ -70,14 +70,20 @@ window.onload = () => {
     btnPagin1.lastChild.innerText = "Plus d'informations";
     btnPagin2.firstChild.innerText = "Retour";
 
-    btnPagin1.lastChild.classList.add('btn');
-    btnPagin2.firstChild.classList.add('btn');
+    // btnPagin1.lastChild.classList.add('btn');
+    // btnPagin2.firstChild.classList.add('btn');
 
-    let bulletList = document.getElementById("pagination-portfolio").children;
+    // let bulletList = document.getElementById("pagination-portfolio").children;
 
-    for (let i = 0; i < bulletList.length; i++) {
-        bulletList[i].classList.add("btn");
-    };
+    // for (let i = 0; i < bulletList.length; i++) {
+    //     bulletList[i].classList.add("btn");
+    // };
+
+    // window.addEventListener("resize", () => {
+    //     for (let i = 0; i < bulletList.length; i++) {
+    //         bulletList[i].classList.add("btn");
+    //     };
+    // })
 
 };
 
