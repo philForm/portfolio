@@ -1,8 +1,9 @@
 import { projects } from "./array.js";
-import { addClassOnEvent, addClassOnResize, adjustHeight, classToggle, portfolioList, sendMail } from "./function.js";
-import { toggle, navLink, navUl, aboutContainElt1, aboutContainElt2, formName, formEmail, formMessage, btnSubmit } from "./html_element.js";
+import { addClassOnEvent, addClassOnResize, adjustHeight, classToggle, portfolioList, sendMail, aboutContent } from "./function.js";
+import { toggle, navLink, navUl, aboutContainElt1, aboutContainElt2, sectAbout, formName, formEmail, formMessage, btnSubmit } from "./html_element.js";
 
 console.log(window.innerWidth);
+
 
 // Repli du menu déroulant au delà de 768px de largeur d'écran, en ajoutant la class "transition" à navUl :
 window.addEventListener("resize", () => {
@@ -17,18 +18,20 @@ toggle.addEventListener("click", () => {
 // Repli du menu déroulant au click sur un intitulé du menu :
 addClassOnEvent(navLink, navUl, 'click', "transition");
 
+aboutContent(sectAbout);
+
 // Création du portfololio :
 portfolioList(projects);
 
 // Ajuste la hauteur de deux éléments HTML au chargement de la page :
-window.addEventListener("load", () => {
-    adjustHeight(aboutContainElt1, aboutContainElt2);
-});
+// window.addEventListener("load", () => {
+//     adjustHeight(aboutContainElt1, aboutContainElt2);
+// });
 
 // Ajuste la hauteur de deux éléments HTML au redimensionnement en largeur de la page :
-window.addEventListener("resize", () => {
-    adjustHeight(aboutContainElt1, aboutContainElt2);
-});
+// window.addEventListener("resize", () => {
+//     adjustHeight(aboutContainElt1, aboutContainElt2);
+// });
 
 // Paramètres de EmailJS :
 const service = 'service_uamh0ws';

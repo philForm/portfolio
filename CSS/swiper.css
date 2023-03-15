@@ -25,6 +25,11 @@ body {
     text-align: start;
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--nav);
+}
+
 /* ======== Boutons ================ */
 
 .swiper-pagination-bullet {
@@ -58,6 +63,14 @@ body {
     box-shadow: var(--btn_hover);
     scale: 1.1;
     color: var(--nav_hover);
+}
+
+.swiper-pagination-bullet-active {
+    background-color: red;
+}
+
+.swiper-pagination-bullet:focus {
+    background-color: red;
 }
 
 .swiper-pagination-bullet:hover::after {
