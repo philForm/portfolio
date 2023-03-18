@@ -18,16 +18,30 @@ body {
 }
 
 /* =========================================== */
+.swiper-pagination {
+    position: relative;
+    text-align: start;
+    display: flex;
+    justify-content: center;
+    bottom: 46px !important;
+    background-color: var(--back_color);
+    padding-bottom: 59px;
+}
+
+.swiper-pagination-bullets {
+    bottom: 50px;
+}
+
+.swiper-pagination span {
+    position: relative;
+    top: 5px;
+}
+/* =========================================== */
 
 .swiper-pagination,
 .swiper-pagination-port {
     position: relative;
     text-align: start;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-    color: var(--nav);
 }
 
 /* ======== Boutons ================ */
@@ -40,12 +54,14 @@ body {
     border-radius: 50px;
     padding: 1rem;
     background-color: var(--nav);
-    cursor: pointer;
+    /* cursor: pointer; */
     font-weight: 500;
     font-size: 1.2rem;
     opacity: 1;
     margin: 0 !important;
     transition: all 300ms ease-in-out;
+    position: relative;
+    top: 6px;
 }
 
 .swiper-pagination-bullet::after {
@@ -61,19 +77,24 @@ body {
 
 .swiper-pagination-bullet:hover {
     box-shadow: var(--btn_hover);
-    scale: 1.1;
+    scale: var(--hover_scale);
     color: var(--nav_hover);
-}
-
-.swiper-pagination-bullet-active {
-    background-color: red;
-}
-
-.swiper-pagination-bullet:focus {
-    background-color: red;
 }
 
 .swiper-pagination-bullet:hover::after {
     opacity: 0.1;
 }
+
+.swiper-pagination-bullet-active::after {
+    opacity: 0.2;
+}
+
+.swiper-pagination-bullet:focus::after {
+    opacity: 0.2;
+}
+
 /* ================================= */
+
+.next-prev > div {
+    color: var(--nav);
+}

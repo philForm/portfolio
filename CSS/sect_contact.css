@@ -5,7 +5,12 @@
 .contact__form {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    /* margin-bottom: 50px; */
+    /* overflow: auto; */
+
+    /* padding-top: 52px; */
+    padding-bottom: 40px;
+    align-items: center;
 }
 
 .contact__form form {
@@ -13,13 +18,17 @@
     max-width: 400px;
     color: #6442cf;
     font-size: 1.4rem;
+
+    /* margin-bottom: 30px; */
+    /* margin-top: 70px; */
 }
 
 .contact__form .form {
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
     gap: 5px;
+
+    margin-bottom: 10px;
 }
 
 .form > input {

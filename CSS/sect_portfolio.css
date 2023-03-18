@@ -82,6 +82,7 @@
 
 .portfolio__pagination span {
     transform: scale(0.6);
+    z-index: 1;
 }
 
 .portfolio__more {

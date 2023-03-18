@@ -10,17 +10,21 @@
     box-sizing: border-box;
     list-style-type: none;
     text-decoration: none;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
 html {
     /* Pour que 1rem soit équivalent à 10px sur toute la page */
+    overflow: hidden;
     font-size: 62.5%;
     font-family: "Roboto", sans-serif;
     overflow-x: hidden;
-    scroll-behavior: smooth;
 }
 
 body {
+    overflow: hidden;
+    scrollbar-width: none;
     background-color: var(--back_color);
 }
 
@@ -50,6 +54,7 @@ body {
         rgba(252, 176, 69, 1) 83%
     );
 
+    --hover_scale: 1.05;
     --btn_hover: rgb(0 0 0 / 13%) 1px 6px 17px 3px, rgb(0 0 0 / 22%) 0px 10px 10px;
 
     --text_color: #434343;

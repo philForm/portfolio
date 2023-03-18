@@ -5,10 +5,20 @@
  * @param {string} classValue 
  */
 const addClassOnResize = (size, htmlEtl, classValue) => {
-    if (window.matchMedia(`(min-width: ${size})`).matches && !htmlEtl.classList.contains(classValue)) {
+    if (window.matchMedia(`(min-width: ${size})`).matches && !htmlEtl.classList.contains(classValue))
         htmlEtl.classList.add(classValue);
-    };
 };
+
+/**
+ * Retire une classe à un élément HTML au delà d'une certaine largeur d'écran :
+ * @param {string} size : ;
+ * @param { HTMLElement } htmlEtl 
+ * @param {string} classValue 
+ */
+const removeClassOnResize = (size, htmlEtl, classValue) => {
+    if (window.matchMedia(`(min-width: ${size})`).matches && htmlEtl.classList.contains(classValue))
+        htmlEtl.classList.remove(classValue);
+}
 
 /**
  * Ajoute une class au conteneur des éléments d'une liste HTML lors d'un événement sur un élément de cette liste :
@@ -17,10 +27,11 @@ const addClassOnResize = (size, htmlEtl, classValue) => {
  * @param {string} event 
  * @param {string} classValue 
  */
-const addClassOnEvent = (htmlElt1, htmlElt2, event, classValue) => {
+const addClassOnEvent = ([htmlElt1, htmlElt2, htmlElt3], event, [classValue1, classValue2]) => {
     for (let i = 0; i < htmlElt1.length; i++) {
         htmlElt1[i].addEventListener(event, () => {
-            htmlElt2.classList.add(classValue);
+            htmlElt2.classList.add(classValue1);
+            htmlElt3.classList.remove(classValue2)
         });
     };
 };
@@ -36,124 +47,6 @@ const classToggle = (htmlEtl, classValue) => {
     else
         htmlEtl.classList.remove(classValue);
 }
-
-const aboutContent = (htmlContainer) => {
-
-    let content1 = `
-        <div class="about__slide">
-            <div class="about__contain" id="about-contain-1">
-                <div>
-                    <div class="text">
-                        <div class="about__title">
-                            <h3>Philippe Mathieu</h3>
-                            <h4>Développeur WEB</h4>
-                        </div>
-                        <div class="about__presentation">
-                            <div class="about__text" id="lorem">
-                                <p>
-                                    Lorem, ipsum dolor sit amconsectetur adipisicing elit.
-                                </p>
-                                <p>
-                                    Lorem, ipsum dolor sit amconsectetur adipisicing elit.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="about__img">
-                        <img src="./images/avatar/einstein.jpg" alt="">
-                    </div>
-                </div>
-                <!--
-                <div class="swiper-pagination about__pagination" id="about-pagination1">
-                    <button id="btn-about-1">TEST_1</button>
-                </div>
-                -->
-            </div>
-        </div>    
-    `
-
-    let content2 = `
-        <div class="">
-            <div class="about__contain" id="about-contain-2">
-                <div class="text">
-                    <div class="about__title curriculum">
-                        <h3>Mon profil</h3>
-                        <a href="./documents/CV_Dev_2.pdf" target="_blank" class="btn">Voir mon CV</a>
-                    </div>
-                    <div class="about__presentation">
-                        <div class="about__text">
-                            <p>
-                                Autonome et rigoureux, mes 27 années
-                                d’expériences professionnelles dans le domaine
-                                artistique m’ont permis de renforcer mes
-                                acquis et d’appréhender les différents outils et
-                                techniques de dessin.
-                            </p>
-                            <p>
-                                Passionné d’informatique, j’ai découvert par
-                                hasard l’automatisation de tâches, ce qui m’a
-                                amené à commencer à me former aux
-                                différents langages (HTLM, CSS, JavaScript, PHP,
-                                Python, SQL …).
-                            </p>
-                            <p>
-                                En quête de nouveaux challenges, ayant le goût
-                                d’apprendre et une forte aptitude à acquérir de
-                                nouvelles connaissances, je viens de suivre une
-                                formation intense de Développeur Web pour
-                                proposer mes services de création de sites web
-                                en freelance. Sachant travailler à la fois de
-                                manière autonome ou en équipe, ayant un
-                                esprit d’analyse et étant créatif, je m’épanouis
-                                dans des environnements dynamiques grâce à
-                                ma capacité à comprendre et à résoudre des
-                                problèmes complexes pour atteindre des
-                                objectifs fixés.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!--
-                <div class="swiper-pagination about__pagination" id="about-pagination2">
-                    <button id="btn-about-2">TEST_2</button>
-                </div>
-                -->
-            </div>
-        </div>
-    `
-
-    htmlContainer.innerHTML = content1;
-
-    const btn = document.getElementById("btn-about");
-
-    btn.addEventListener("click", () => {
-        if (htmlContainer.innerHTML == content1) {
-            console.log("content2")
-            htmlContainer.innerHTML = content2
-            btn.innerText = "<< About"
-        } else if (htmlContainer.innerHTML == content2) {
-            console.log("content1")
-            htmlContainer.innerHTML = content1
-            btn.innerText = "Plus d'informations >>"
-        }
-    })
-    // if (btn1 != null) {
-    //     btn1.addEventListener("click", () => {
-    //         console.log("content1")
-    //         htmlContainer.innerHTML = content2
-    //         btn.innerText = "PLUS D'INFOS"
-    //     })
-    // }
-    // if (btn2 != null) {
-    //     btn2.addEventListener("click", () => {
-    //         console.log("content2")
-    //         htmlContainer.innerHTML = content1
-    //         btn.innerText = "PLUS D'INFOS"
-    //     })
-    // }
-
-};
-
 
 /**
  * Création de la liste des projets du portfolio :
@@ -226,7 +119,7 @@ const portfolioList = (listArray) => {
                         ${bouton}
                     </div>
                 </article>
-            `;
+                `;
 
         fragment.appendChild(divSlide);
 
@@ -310,4 +203,4 @@ const sendMail = (formName, formEmail, formMessage, service, template) => {
 };
 
 
-export { addClassOnResize, addClassOnEvent, classToggle, portfolioList, swiper2, adjustHeight, sendMail, aboutContent };
+export { addClassOnResize, removeClassOnResize, addClassOnEvent, classToggle, portfolioList, swiper2, adjustHeight, sendMail };
