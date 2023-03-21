@@ -118,8 +118,11 @@ const portfolioList = (listArray) => {
                     <div class="portfolio__more" id='portfolio-more-${listArray.indexOf(item) + 1}'>
                         ${bouton}
                     </div>
+                    
                 </article>
                 `;
+
+
 
         fragment.appendChild(divSlide);
 
@@ -131,6 +134,23 @@ const portfolioList = (listArray) => {
         let img = document.querySelector(`#portfolio-img-${listArray.indexOf(item) + 1} img`);
         img.style.maxWidth = `${item.width}`;
         img.style.maxHeight = `${item.height}`;
+
+        let imgContain = document.getElementById(`portfolio-img-${listArray.indexOf(item) + 1}`)
+
+        // Ouverture de la fenêtre modale :
+        imgContain.addEventListener("click", () => {
+            console.log(`modal : ${listArray.indexOf(item) + 1}`)
+            let modalContain = document.getElementById("modal-contain");
+            let overlay = document.getElementById("modal-overlay")
+            let modal = document.getElementById("modal")
+            modalContain.style.visibility = "visible";
+            modal.innerText = item.title;
+            overlay.addEventListener("click", () => {
+                modalContain.style.visibility = "hidden";
+
+            })
+
+        })
     };
 
 };
