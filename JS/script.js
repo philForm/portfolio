@@ -1,5 +1,5 @@
-import { projects } from "./array.js";
-import { addClassOnEvent, addClassOnResize, classToggle, portfolioList, removeClassOnResize, sendMail } from "./function.js";
+import { projects, projectsDetails } from "./array.js";
+import { addClassOnEvent, addClassOnResize, classToggle, modalDetails, portfolioList, removeClassOnResize, sendMail } from "./function.js";
 import { modalNav, toggle, navLink, navUl, formName, formEmail, formMessage, btnSubmit } from "./html_element.js";
 
 console.log(window.innerWidth);
@@ -10,7 +10,7 @@ window.addEventListener("resize", () => {
     removeClassOnResize('768px', modalNav, "overlay");
 });
 
-// Au clic sur le bouton hamb du menu, repli ou deployement du menu déroulant :
+// Au clic sur le bouton hamb du menu, repli ou déploiement du menu déroulant :
 toggle.addEventListener("click", () => {
     classToggle(navUl, "transition");
     if (!navUl.classList.contains("transition")) {
@@ -30,6 +30,9 @@ addClassOnEvent([navLink, navUl, modalNav], 'click', ["transition", "overlay"]);
 
 // Création du portfololio :
 portfolioList(projects);
+
+// Création de la modale :
+modalDetails(projects, projectsDetails);
 
 // Paramètres de EmailJS :
 const service = 'service_uamh0ws';

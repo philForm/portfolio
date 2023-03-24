@@ -1,6 +1,7 @@
 
 const projects = [
     {
+        id: 1,
         title: "Groupomania",
         image: "./images/projets/groupomania.webp",
         alt: "logo de Groulpomania",
@@ -19,6 +20,7 @@ const projects = [
         height: "380%"
     },
     {
+        id: 2,
         title: "Piiquante",
         image: "./images/projets/piiquante.webp",
         alt: "logo de Piiquante",
@@ -36,6 +38,7 @@ const projects = [
         height: "155%"
     },
     {
+        id: 3,
         title: "Kanap",
         image: "./images/projets/kanap-transparent.png",
         alt: "logo de Kanap",
@@ -52,6 +55,7 @@ const projects = [
         height: "150%"
     },
     {
+        id: 4,
         title: "Agence La Panthère",
         image: "./images/projets/agence-la-panthere-monochrome.svg",
         alt: "logo de l'agence la Panthère",
@@ -64,6 +68,7 @@ const projects = [
         height: "92%"
     },
     {
+        id: 5,
         title: "Ohmyfood",
         image: "./images/projets/ohmyfood.png",
         alt: "logo de Ohmyfood",
@@ -81,6 +86,7 @@ const projects = [
         height: "90%"
     },
     {
+        id: 6,
         title: "Booki",
         image: "./images/projets/booki.png",
         alt: "logo de Booki",
@@ -98,4 +104,76 @@ const projects = [
     }
 ];
 
-export { projects };
+const projectsDetails = [
+    {
+        id: 1,
+        title: "Groupomania",
+        slides: [
+            {
+                img: "./images/test_modal/photo-1.webp",
+                txt: `  
+                    <p>
+                        Lorem ipsum dolor sit amet consectetuadipisicing elit.Optio, iusto possimus
+                        aperiam
+                        ut in vitae dignissimos porro, eius impeditamecupiditate velit, repellat ea
+                        officia
+                        vel nobis. Distinctio, explicabo natus.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetuadipisicing elit.Optio, iusto possimus
+                        aperiam
+                        ut in vitae dignissimos porro, eius impeditamecupiditate velit, repellat ea
+                        officia
+                        vel nobis. Distinctio, explicabo natus.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetuadipisicing elit.Optio, iusto possimus
+                        aperiam
+                        ut in vitae dignissimos porro, eius impeditamecupiditate velit, repellat ea
+                        officia
+                        vel nobis. Distinctio, explicabo natus.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetuadipisicing elit.Optio, iusto possimus
+                        aperiam
+                        ut in vitae dignissimos porro, eius impeditamecupiditate velit, repellat ea
+                        officia
+                        vel nobis. Distinctio, explicabo natus.
+                    </p>`
+            }, {
+                img: "./images/test_modal/photo-2.webp",
+                txt: `
+                    <p>
+                        Lorem ipsum dolor sit amet consectetuadipisicing elit.Optio, iusto possimus
+                        aperiam
+                        ut in vitae dignissimos porro, eius impeditamecupiditate velit, repellat ea
+                        officia
+                        vel nobis. Distinctio, explicabo natus.
+                    </p>
+                `
+            }
+        ]
+    },
+    {
+        id: 2,
+        title: "proj_2"
+    },
+    {
+        id: 3,
+        title: "proj_3"
+    },
+    {
+        id: 4,
+        title: "proj_4"
+    },
+    {
+        id: 5,
+        title: "proj_5"
+    },
+    {
+        id: 6,
+        title: "proj_6"
+    },
+]
+
+export { projects, projectsDetails };

@@ -122,8 +122,6 @@ const portfolioList = (listArray) => {
                 </article>
                 `;
 
-
-
         fragment.appendChild(divSlide);
 
     };
@@ -135,25 +133,89 @@ const portfolioList = (listArray) => {
         img.style.maxWidth = `${item.width}`;
         img.style.maxHeight = `${item.height}`;
 
-        let imgContain = document.getElementById(`portfolio-img-${listArray.indexOf(item) + 1}`)
+    }
+
+};
+
+/**
+ * Création de la modale détaillant chaque projet du portfolio :
+ * @param {[object]} listArray : tableau d'objets
+ * @param {[object]} listDetails : tableau d'objets
+ */
+const modalDetails = (listArray, listDetails) => {
+
+    const modalContain = document.getElementById("modal-contain");
+    const overlay = document.getElementById("modal-overlay");
+    const modal = document.getElementById("modal-wrapper");
+    const modalTitle = document.getElementById('modal-title');
+    const modalCloseBtn = document.getElementById("close-modal");
+    const modalImgCont = document.getElementById("modal-slide-img");
+    const modalNextPrev = document.getElementsByClassName("modal__nextprev")
+    const modalTxtCont = document.getElementsByClassName("modal_slide_txt");
+    console.log(modalTxtCont);
+    console.log(modalTxtCont[0]);
+
+    for (let item of listArray) {
+
+        const imgContain = document.getElementById(`portfolio-img-${listArray.indexOf(item) + 1}`);
 
         // Ouverture de la fenêtre modale :
         imgContain.addEventListener("click", () => {
-            console.log(`modal : ${listArray.indexOf(item) + 1}`)
-            let modalContain = document.getElementById("modal-contain");
-            let overlay = document.getElementById("modal-overlay")
-            let modal = document.getElementById("modal")
+
+            console.log(item)
+            // Recherche d'un élément dans listDetails par son id :
+            const detail = listDetails.find(el => el.id === item.id);
+
+            console.log(detail)
+
             modalContain.style.visibility = "visible";
-            modal.innerText = item.title;
-            overlay.addEventListener("click", () => {
-                modalContain.style.visibility = "hidden";
+
+            let modalImgHeight = modalImgCont.clientHeight;
+
+            for (let item of modalTxtCont)
+                item.style.paddingTop = `${modalImgHeight + 10}px`;
+
+            for (let item of modalNextPrev)
+                item.style.top = `${modalImgHeight / 2}px`;
+
+
+            window.addEventListener("resize", () => {
+                modalImgHeight = modalImgCont.clientHeight;
+                for (let item of modalTxtCont)
+                    item.style.paddingTop = `${modalImgHeight + 10}px`;
+                for (let item of modalNextPrev)
+                    item.style.top = `${modalImgHeight / 2}px`;
 
             })
 
+            modalTitle.innerHTML = `
+                <h2>${item.title}</h2>
+            `;
+
+            modal.innerHTML = `
+                <div class="swiper-slide modal_slide">
+                    <div>${detail.title} : slide 1</div>
+                </div>
+                <div class="swiper-slide modal_slide">
+                    <div>${detail.title} : slide 2</div>
+                </div>
+                <div class="swiper-slide modal_slide">
+                    <div>${detail.title} : slide 3</div>
+                </div>
+            `;
+
+            overlay.addEventListener("click", () => {
+                modalContain.style.visibility = "hidden";
+            });
+
+            modalCloseBtn.addEventListener("click", () => {
+                modalContain.style.visibility = "hidden";
+
+            });
+
         })
     };
-
-};
+}
 
 
 
@@ -223,4 +285,4 @@ const sendMail = (formName, formEmail, formMessage, service, template) => {
 };
 
 
-export { addClassOnResize, removeClassOnResize, addClassOnEvent, classToggle, portfolioList, swiper2, adjustHeight, sendMail };
+export { addClassOnResize, removeClassOnResize, addClassOnEvent, classToggle, portfolioList, modalDetails, swiper2, adjustHeight, sendMail };

@@ -1,6 +1,5 @@
 window.onload = () => {
 
-
     // Swiper initialisation
     let swiper = new Swiper(".mySwiper", {
         pagination: {
@@ -59,6 +58,19 @@ window.onload = () => {
             }
         },
     });
+
+    new Swiper(".mySwiper3", {
+        centeredSlides: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        // effect: "fade",
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+
+
 
     // ==============================================
 
