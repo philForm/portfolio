@@ -108,6 +108,7 @@ const portfolioList = (listArray) => {
                     </div>-->
                     <a href="#" class="portfolio__img" id="portfolio-img-${listArray.indexOf(item) + 1}">
                         <img src=${item.image} alt="${item.alt}">
+                        <div>En savoir plus</div>
                     </a>
                     <div class="portfolio__content">
                         <div class="portfolio__descript">
@@ -147,13 +148,14 @@ const modalDetails = (listArray, listDetails) => {
     const modalContain = document.getElementById("modal-contain");
     const overlay = document.getElementById("modal-overlay");
     const modal = document.getElementById("modal-wrapper");
-    const modalTitle = document.getElementById('modal-title');
     const modalCloseBtn = document.getElementById("close-modal");
     const modalImgCont = document.getElementById("modal-slide-img");
-    const modalNextPrev = document.getElementsByClassName("modal__nextprev")
+    const modalImg = document.querySelector("#modal-slide-img img");
+    const modalNextPrev = document.getElementsByClassName("modal__nextprev");
     const modalTxtCont = document.getElementsByClassName("modal_slide_txt");
     console.log(modalTxtCont);
-    console.log(modalTxtCont[0]);
+    console.log(modalImg);
+    console.log(modalNextPrev)
 
     for (let item of listArray) {
 
@@ -170,39 +172,50 @@ const modalDetails = (listArray, listDetails) => {
 
             modalContain.style.visibility = "visible";
 
-            let modalImgHeight = modalImgCont.clientHeight;
+            const modalPosition = () => {
+                let modalImgHeight = modalImgCont.clientHeight;
+                let modalImgWidth = modalImgCont.clientWidth;
+                let imgWidth = modalImg.clientWidth;
+                let txtPadding = (modalImgWidth - imgWidth) / 2;
+                // console.log(txtPadding)
 
-            for (let item of modalTxtCont)
-                item.style.paddingTop = `${modalImgHeight + 10}px`;
-
-            for (let item of modalNextPrev)
-                item.style.top = `${modalImgHeight / 2}px`;
-
-
-            window.addEventListener("resize", () => {
-                modalImgHeight = modalImgCont.clientHeight;
-                for (let item of modalTxtCont)
+                for (let item of modalTxtCont) {
                     item.style.paddingTop = `${modalImgHeight + 10}px`;
+                    item.style.paddingLeft = `${txtPadding}px`;
+                    item.style.paddingRight = `${txtPadding}px`;
+                }
+
                 for (let item of modalNextPrev)
                     item.style.top = `${modalImgHeight / 2}px`;
 
+                modalNextPrev[0].style.right = `${txtPadding / 2}px`;
+                modalNextPrev[0].style.transform = "translateX(+50%) scale(0.5)";
+                modalNextPrev[1].style.left = `${txtPadding / 2}px`;
+                modalNextPrev[1].style.transform = "translateX(-50%) scale(0.5)";
+            };
+
+            modalPosition();
+
+            window.addEventListener("resize", () => {
+                modalPosition();
+
             })
 
-            modalTitle.innerHTML = `
-                <h2>${item.title}</h2>
+            overlay.innerHTML = `
+                <h2>${detail.title}</h2>
             `;
 
-            modal.innerHTML = `
-                <div class="swiper-slide modal_slide">
-                    <div>${detail.title} : slide 1</div>
-                </div>
-                <div class="swiper-slide modal_slide">
-                    <div>${detail.title} : slide 2</div>
-                </div>
-                <div class="swiper-slide modal_slide">
-                    <div>${detail.title} : slide 3</div>
-                </div>
-            `;
+            // modal.innerHTML = `
+            //     <div class="swiper-slide modal_slide">
+            //         <div>${detail.title} : slide 1</div>
+            //     </div>
+            //     <div class="swiper-slide modal_slide">
+            //         <div>${detail.title} : slide 2</div>
+            //     </div>
+            //     <div class="swiper-slide modal_slide">
+            //         <div>${detail.title} : slide 3</div>
+            //     </div>
+            // `;
 
             overlay.addEventListener("click", () => {
                 modalContain.style.visibility = "hidden";
@@ -210,7 +223,6 @@ const modalDetails = (listArray, listDetails) => {
 
             modalCloseBtn.addEventListener("click", () => {
                 modalContain.style.visibility = "hidden";
-
             });
 
         })

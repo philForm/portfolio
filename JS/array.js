@@ -1,10 +1,11 @@
+import { groupomania } from "./projects/groupomania";
 
 const projects = [
     {
         id: 1,
         title: "Groupomania",
         image: "./images/projets/groupomania.webp",
-        alt: "logo de Groulpomania",
+        alt: "logo de Groupomania",
         description: "<p>Implémentation du front-end et du back-end d'un réseau social interne d'entreprise ainsi que la création et la gestion d'une base de données.</p>",
         more: [
             ["Code frontend", "https://github.com/philForm/projet_7_groupomania_frontend.git"],
@@ -105,74 +106,26 @@ const projects = [
 ];
 
 const projectsDetails = [
-    {
-        id: 1,
-        title: "Groupomania",
-        slides: [
-            {
-                img: "./images/test_modal/photo-1.webp",
-                txt: `  
-                    <p>
-                        Lorem ipsum dolor sit amet consectetuadipisicing elit.Optio, iusto possimus
-                        aperiam
-                        ut in vitae dignissimos porro, eius impeditamecupiditate velit, repellat ea
-                        officia
-                        vel nobis. Distinctio, explicabo natus.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetuadipisicing elit.Optio, iusto possimus
-                        aperiam
-                        ut in vitae dignissimos porro, eius impeditamecupiditate velit, repellat ea
-                        officia
-                        vel nobis. Distinctio, explicabo natus.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetuadipisicing elit.Optio, iusto possimus
-                        aperiam
-                        ut in vitae dignissimos porro, eius impeditamecupiditate velit, repellat ea
-                        officia
-                        vel nobis. Distinctio, explicabo natus.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetuadipisicing elit.Optio, iusto possimus
-                        aperiam
-                        ut in vitae dignissimos porro, eius impeditamecupiditate velit, repellat ea
-                        officia
-                        vel nobis. Distinctio, explicabo natus.
-                    </p>`
-            }, {
-                img: "./images/test_modal/photo-2.webp",
-                txt: `
-                    <p>
-                        Lorem ipsum dolor sit amet consectetuadipisicing elit.Optio, iusto possimus
-                        aperiam
-                        ut in vitae dignissimos porro, eius impeditamecupiditate velit, repellat ea
-                        officia
-                        vel nobis. Distinctio, explicabo natus.
-                    </p>
-                `
-            }
-        ]
-    },
+    groupomania,
     {
         id: 2,
-        title: "proj_2"
+        title: "Piiquante"
     },
     {
         id: 3,
-        title: "proj_3"
+        title: "Kanap"
     },
     {
         id: 4,
-        title: "proj_4"
+        title: "Agence La Panthère"
     },
     {
         id: 5,
-        title: "proj_5"
+        title: "Ohmyfood"
     },
     {
         id: 6,
-        title: "proj_6"
+        title: "Booki"
     },
 ]
 
