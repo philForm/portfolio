@@ -2,7 +2,7 @@ import { booki } from "./projects/booki.js";
 import { groupomania } from "./projects/groupomania.js";
 import { kanap } from "./projects/kanap.js";
 import { laPanthere } from "./projects/la_panthere.js";
-import { ohMyFood } from "./projects/ohMyFood.js";
+import { ohMyFood } from "./projects/ohmyfood.js";
 import { piiquante } from "./projects/piiquante.js";
 
 const projects = [
