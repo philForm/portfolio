@@ -1,3 +1,5 @@
+
+
 /**
  * Rajoute une classe à un élément HTML au delà d'une certaine largeur d'écran :
  * @param {string} size : ;
@@ -134,6 +136,8 @@ const portfolioList = (listArray) => {
         img.style.maxWidth = `${item.width}`;
         img.style.maxHeight = `${item.height}`;
 
+        console.log(document.querySelector(`#portfolio-img-${listArray.indexOf(item) + 1} img`).clientHeight);
+
     }
 
 };
@@ -149,18 +153,18 @@ const modalDetails = (listArray, listDetails) => {
     const overlay = document.getElementById("modal-overlay");
     const modal = document.getElementById("modal-wrapper");
     const modalCloseBtn = document.getElementById("close-modal");
-    const modalImgCont = document.getElementById("modal-slide-img");
-    const modalImg = document.querySelector("#modal-slide-img img");
+    // const modalImgCont = document.getElementById("modal-slide-img");
+    // const modalImg = document.querySelector("#modal-slide-img img");
     const modalNextPrev = document.getElementsByClassName("modal__nextprev");
-    const modalTxtCont = document.getElementsByClassName("modal_slide_txt");
-    console.log(modalTxtCont);
-    console.log(modalImg);
+    // const modalTxtCont = document.getElementsByClassName("modal_slide_txt");
+    // console.log(modalTxtCont);
+    // console.log(modalImg);
     console.log(modalNextPrev)
 
     for (let item of listArray) {
 
         const imgContain = document.getElementById(`portfolio-img-${listArray.indexOf(item) + 1}`);
-
+        console.log(imgContain)
         // Ouverture de la fenêtre modale :
         imgContain.addEventListener("click", () => {
 
@@ -168,66 +172,151 @@ const modalDetails = (listArray, listDetails) => {
             // Recherche d'un élément dans listDetails par son id :
             const detail = listDetails.find(el => el.id === item.id);
 
-            console.log(detail)
-
             modalContain.style.visibility = "visible";
 
-            const modalPosition = () => {
-                let modalImgHeight = modalImgCont.clientHeight;
-                let modalImgWidth = modalImgCont.clientWidth;
-                let imgWidth = modalImg.clientWidth;
-                let txtPadding = (modalImgWidth - imgWidth) / 2;
-                // console.log(txtPadding)
+            // const modalPosition = () => {
+            //     let modalImgHeight = modalImgCont.clientHeight;
+            //     let modalImgWidth = modalImgCont.clientWidth;
+            //     let imgWidth = modalImg.clientWidth;
+            //     let txtPadding = (modalImgWidth - imgWidth) / 2;
+            //     // console.log(txtPadding)
 
-                for (let item of modalTxtCont) {
-                    item.style.paddingTop = `${modalImgHeight + 10}px`;
-                    item.style.paddingLeft = `${txtPadding}px`;
-                    item.style.paddingRight = `${txtPadding}px`;
-                }
+            //     for (let item of modalTxtCont) {
+            //         item.style.paddingTop = `${modalImgHeight + 10}px`;
+            //         item.style.paddingLeft = `${txtPadding}px`;
+            //         item.style.paddingRight = `${txtPadding}px`;
+            //     }
 
-                for (let item of modalNextPrev)
-                    item.style.top = `${modalImgHeight / 2}px`;
+            //     for (let item of modalNextPrev)
+            //         item.style.top = `${modalImgHeight / 2}px`;
 
-                modalNextPrev[0].style.right = `${txtPadding / 2}px`;
-                modalNextPrev[0].style.transform = "translateX(+50%) scale(0.5)";
-                modalNextPrev[1].style.left = `${txtPadding / 2}px`;
-                modalNextPrev[1].style.transform = "translateX(-50%) scale(0.5)";
-            };
+            //     modalNextPrev[0].style.right = `${txtPadding / 2}px`;
+            //     modalNextPrev[0].style.transform = "translateX(+50%) scale(0.5)";
+            //     modalNextPrev[1].style.left = `${txtPadding / 2}px`;
+            //     modalNextPrev[1].style.transform = "translateX(-50%) scale(0.5)";
+            // };
 
-            modalPosition();
 
-            window.addEventListener("resize", () => {
-                modalPosition();
 
-            })
+            // modalPosition();
+
+            // window.addEventListener("resize", () => {
+            //     modalPosition();
+
+            // })
 
             overlay.innerHTML = `
                 <h2>${detail.title}</h2>
             `;
 
-            // modal.innerHTML = `
-            //     <div class="swiper-slide modal_slide">
-            //         <div>${detail.title} : slide 1</div>
-            //     </div>
-            //     <div class="swiper-slide modal_slide">
-            //         <div>${detail.title} : slide 2</div>
-            //     </div>
-            //     <div class="swiper-slide modal_slide">
-            //         <div>${detail.title} : slide 3</div>
-            //     </div>
-            // `;
+            const fragment = new DocumentFragment();
 
-            overlay.addEventListener("click", () => {
-                modalContain.style.visibility = "hidden";
+            if (detail.slides) {
+                for (let i = 0; i < detail.slides.length; i++) {
+                    let divSlide = document.createElement("div");
+                    divSlide.classList.add("swiper-slide", "modal_slide");
+                    divSlide.setAttribute("id", `swiper-slide-${detail.id}`);
+
+                    console.log(detail.slides[i].alt);
+
+                    divSlide.innerHTML = `
+                        <div class="modal_slide_img" id="modal-slide-img-${i + 1}">
+                            <img src=${detail.slides[i].img} alt=${detail.slides[i].alt} id="img-${i + 1}">
+                        </div>
+                        <div class="modal_slide_txt">
+                            ${detail.slides[i].txt}
+                        </div>    
+                    `
+                    fragment.appendChild(divSlide);
+                };
+
+                modal.appendChild(fragment);
+            };
+
+            const modalImgCont = document.querySelectorAll(".modal_slide_img");
+            const modalImg = document.querySelectorAll(".modal_slide_img img");
+            const modalTxtCont = document.getElementsByClassName("modal_slide_txt");
+
+
+            console.log(modalImgCont)
+            console.log(modalImg)
+
+            let rect = modalImgCont[0].getBoundingClientRect()
+            console.log(rect)
+
+            let rectImg = modalImg[0].getBoundingClientRect()
+            console.log(rectImg)
+
+            let rectModal = modal.getBoundingClientRect()
+            console.log(rectModal)
+
+            console.log(document.querySelector("#modal-slide-img-1").clientHeight)
+
+
+            const modalPosition = () => {
+                let img = document.getElementById("img-1")
+                console.log(img.offsetHeight)
+                console.log("========= modalePosition active")
+                for (let item of modalImgCont) {
+                    console.log(item)
+                    // let modalImgHeight = item.clientHeight;
+                    let modalImgHeight = item.clientWidth / 1.92;
+                    console.log(modalImgCont)
+                    console.log(modalImgHeight)
+                    console.log(item.getClientRects())
+                    let modalImgWidth = item.clientWidth;
+                    console.log(modalImgWidth)
+                    for (let item2 of modalImg) {
+                        let imgWidth = item2.clientWidth;
+                        let txtPadding = (modalImgWidth - imgWidth) / 2;
+                        for (let item3 of modalTxtCont) {
+                            item3.style.paddingTop = `${modalImgHeight + 15}px`;
+                            item3.style.paddingLeft = `${txtPadding - 10}px`;
+                            item3.style.paddingRight = `${txtPadding - 10}px`;
+                        }
+
+                        for (let item4 of modalNextPrev)
+                            item4.style.top = `${modalImgHeight / 2}px`;
+
+                        modalNextPrev[0].style.right = `${txtPadding / 2}px`;
+                        modalNextPrev[0].style.transform = "translateX(+50%) scale(0.5)";
+                        modalNextPrev[1].style.left = `${txtPadding / 2}px`;
+                        modalNextPrev[1].style.transform = "translateX(-50%) scale(0.5)";
+                    }
+
+                }
+
+                // console.log(txtPadding)
+
+            };
+
+            // modal.addEventListener("mousemove", () => {
+            //     modalPosition();
+            // })
+
+            // modal.onload = () => {
+            modalPosition()
+            // };
+
+            window.addEventListener("resize", () => {
+                modalPosition();
             });
 
-            modalCloseBtn.addEventListener("click", () => {
-                modalContain.style.visibility = "hidden";
-            });
 
         })
-    };
-}
+
+
+        overlay.addEventListener("click", () => {
+            modalContain.style.visibility = "hidden";
+        });
+
+        modalCloseBtn.addEventListener("click", () => {
+            modalContain.style.visibility = "hidden";
+        });
+
+    }
+};
+
 
 
 

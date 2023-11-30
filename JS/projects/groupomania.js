@@ -1,11 +1,11 @@
-import "../../images/test_modal"
 
 export const groupomania = {
     id: 1,
     title: "Groupomania",
     slides: [
         {
-            img: "../../images/test_modal/photo-1.webp",
+            img: "./images/test_modal/photo-1.webp",
+            alt: "picture",
             txt: `  
                     <p>
                         Lorem ipsum dolor sit amet consectetuadipisicing elit.Optio, iusto possimus
@@ -36,7 +36,8 @@ export const groupomania = {
                         vel nobis. Distinctio, explicabo natus.
                     </p>`
         }, {
-            img: "../../images/test_modal/photo-2.webp",
+            img: "./images/test_modal/photo-2.webp",
+            alt: "picture",
             txt: `
                     <p>
                         Lorem ipsum dolor sit amet consectetuadipisicing elit.Optio, iusto possimus

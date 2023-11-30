@@ -2,7 +2,18 @@ import { projects, projectsDetails } from "./array.js";
 import { addClassOnEvent, addClassOnResize, classToggle, modalDetails, portfolioList, removeClassOnResize, sendMail } from "./function.js";
 import { modalNav, toggle, navLink, navUl, formName, formEmail, formMessage, btnSubmit } from "./html_element.js";
 
+
 console.log(window.innerWidth);
+
+// window.onload = () => {
+
+// ======================================================================
+// ======================================================================
+
+
+// ======================================================================
+// ======================================================================
+
 
 // Repli du menu déroulant au delà de 768px de largeur d'écran, en ajoutant la class "transition" à navUl :
 window.addEventListener("resize", () => {
@@ -44,6 +55,6 @@ btnSubmit.addEventListener("click", (e) => {
     sendMail(formName, formEmail, formMessage, service, template);
 })
 
-
+// };
 
 

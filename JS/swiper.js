@@ -20,10 +20,9 @@ window.onload = () => {
 
 
 
-
     new Swiper(".mySwiper2", {
         spaceBetween: 10,
-        freeMode: true,
+        // freeMode: true,
         loop: true,
         // size: 620,
         // width: 300,
@@ -63,7 +62,7 @@ window.onload = () => {
         centeredSlides: true,
         slidesPerView: 1,
         spaceBetween: 0,
-        // effect: "fade",
+        effect: "fade",
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",

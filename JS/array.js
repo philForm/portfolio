@@ -1,4 +1,9 @@
-import { groupomania } from "./projects/groupomania";
+import { booki } from "./projects/booki.js";
+import { groupomania } from "./projects/groupomania.js";
+import { kanap } from "./projects/kanap.js";
+import { laPanthere } from "./projects/la_panthere.js";
+import { ohMyFood } from "./projects/ohMyFood.js";
+import { piiquante } from "./projects/piiquante.js";
 
 const projects = [
     {
@@ -107,26 +112,11 @@ const projects = [
 
 const projectsDetails = [
     groupomania,
-    {
-        id: 2,
-        title: "Piiquante"
-    },
-    {
-        id: 3,
-        title: "Kanap"
-    },
-    {
-        id: 4,
-        title: "Agence La Panthère"
-    },
-    {
-        id: 5,
-        title: "Ohmyfood"
-    },
-    {
-        id: 6,
-        title: "Booki"
-    },
+    piiquante,
+    kanap,
+    laPanthere,
+    ohMyFood,
+    booki
 ]
 
 export { projects, projectsDetails };

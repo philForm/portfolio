@@ -118,6 +118,7 @@
 @media all and (max-width: 560px) {
     .modal_slide_img {
         width: 100%;
+        /* height: 100%; */
     }
 }
 
