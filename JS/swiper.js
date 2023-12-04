@@ -49,11 +49,11 @@ window.onload = () => {
             },
             1024: {
                 slidesPerView: 4,
-                slidesPerGroup: 4,
+                slidesPerGroup: 2,
             },
             1400: {
                 slidesPerView: 5,
-                slidesPerGroup: 5,
+                slidesPerGroup: 1,
             }
         },
     });

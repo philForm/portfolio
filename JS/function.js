@@ -237,7 +237,6 @@ const modalDetails = (listArray, listDetails) => {
             const modalImg = document.querySelectorAll(".modal_slide_img img");
             const modalTxtCont = document.getElementsByClassName("modal_slide_txt");
 
-
             console.log(modalImgCont)
             console.log(modalImg)
 
