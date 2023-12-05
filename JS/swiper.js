@@ -62,7 +62,7 @@ window.onload = () => {
         centeredSlides: true,
         slidesPerView: 1,
         spaceBetween: 0,
-        effect: "fade",
+        // effect: "fade",
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",

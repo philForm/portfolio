@@ -1,4 +1,5 @@
 export const kanap = {
     id: 3,
-    title: "Kanap"
+    title: "Kanap",
+    under_construct: true
 };

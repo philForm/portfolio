@@ -55,6 +55,9 @@
 }
 
 .modal > img {
+    position: absolute;
+    display: none;
+    top: 15%;
     width: 80%;
 }
 

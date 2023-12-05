@@ -153,18 +153,16 @@ const modalDetails = (listArray, listDetails) => {
     const overlay = document.getElementById("modal-overlay");
     const modal = document.getElementById("modal-wrapper");
     const modalCloseBtn = document.getElementById("close-modal");
-    // const modalImgCont = document.getElementById("modal-slide-img");
-    // const modalImg = document.querySelector("#modal-slide-img img");
     const modalNextPrev = document.getElementsByClassName("modal__nextprev");
-    // const modalTxtCont = document.getElementsByClassName("modal_slide_txt");
-    // console.log(modalTxtCont);
-    // console.log(modalImg);
+    const modalElt = document.getElementById('modal');
+    const underConstruct = document.querySelector("#modal > img");
     console.log(modalNextPrev)
 
     for (let item of listArray) {
 
         const imgContain = document.getElementById(`portfolio-img-${listArray.indexOf(item) + 1}`);
-        console.log(imgContain)
+        console.log(imgContain);
+
         // Ouverture de la fenêtre modale :
         imgContain.addEventListener("click", () => {
 
@@ -174,44 +172,14 @@ const modalDetails = (listArray, listDetails) => {
 
             modalContain.style.visibility = "visible";
 
-            // const modalPosition = () => {
-            //     let modalImgHeight = modalImgCont.clientHeight;
-            //     let modalImgWidth = modalImgCont.clientWidth;
-            //     let imgWidth = modalImg.clientWidth;
-            //     let txtPadding = (modalImgWidth - imgWidth) / 2;
-            //     // console.log(txtPadding)
-
-            //     for (let item of modalTxtCont) {
-            //         item.style.paddingTop = `${modalImgHeight + 10}px`;
-            //         item.style.paddingLeft = `${txtPadding}px`;
-            //         item.style.paddingRight = `${txtPadding}px`;
-            //     }
-
-            //     for (let item of modalNextPrev)
-            //         item.style.top = `${modalImgHeight / 2}px`;
-
-            //     modalNextPrev[0].style.right = `${txtPadding / 2}px`;
-            //     modalNextPrev[0].style.transform = "translateX(+50%) scale(0.5)";
-            //     modalNextPrev[1].style.left = `${txtPadding / 2}px`;
-            //     modalNextPrev[1].style.transform = "translateX(-50%) scale(0.5)";
-            // };
-
-
-
-            // modalPosition();
-
-            // window.addEventListener("resize", () => {
-            //     modalPosition();
-
-            // })
-
+            // Ajoute le titre du projet :
             overlay.innerHTML = `
                 <h2>${detail.title}</h2>
             `;
 
             const fragment = new DocumentFragment();
 
-            if (detail.slides) {
+            if (detail.slides && !detail.under_construct) {
                 for (let i = 0; i < detail.slides.length; i++) {
                     let divSlide = document.createElement("div");
                     divSlide.classList.add("swiper-slide", "modal_slide");
@@ -231,7 +199,11 @@ const modalDetails = (listArray, listDetails) => {
                 };
 
                 modal.appendChild(fragment);
-            };
+            }
+            else if (detail.under_construct) {
+                modalElt.style.flexDirection = 'column';
+                underConstruct.style.display = 'block';
+            }
 
             const modalImgCont = document.querySelectorAll(".modal_slide_img");
             const modalImg = document.querySelectorAll(".modal_slide_img img");
@@ -289,29 +261,28 @@ const modalDetails = (listArray, listDetails) => {
 
             };
 
-            // modal.addEventListener("mousemove", () => {
-            //     modalPosition();
-            // })
-
-            // modal.onload = () => {
             modalPosition()
-            // };
 
             window.addEventListener("resize", () => {
                 modalPosition();
             });
 
-
-        })
-
-
-        overlay.addEventListener("click", () => {
-            modalContain.style.visibility = "hidden";
         });
 
-        modalCloseBtn.addEventListener("click", () => {
-            modalContain.style.visibility = "hidden";
-        });
+        /**
+         * Ferme la fenêtre modale :
+         * @param {HTMLElement} element 
+         */
+        const closeModal = (element) => {
+            element.addEventListener("click", () => {
+                modalContain.style.visibility = "hidden";
+                modalElt.style.flexDirection = 'row';
+                underConstruct.style.display = 'none';
+            });
+        }
+
+        closeModal(overlay);
+        closeModal(modalCloseBtn);
 
     }
 };

@@ -2,6 +2,8 @@
 export const groupomania = {
     id: 1,
     title: "Groupomania",
+    under_construct: true,
+    // under_construct: false,
     slides: [
         {
             img: "./images/test_modal/photo-1.webp",
