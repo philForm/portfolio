@@ -46,7 +46,8 @@ portfolioList(projects);
 modalDetails(projects, projectsDetails);
 
 // Paramètres de EmailJS :
-const service = 'service_uamh0ws';
+// const service = 'service_uamh0ws';
+const service = 'service_yg4kkth';
 const template = 'template_hyh5rsk';
 
 // Envoi le message du formulaire :
